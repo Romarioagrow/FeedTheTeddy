@@ -1,0 +1,5 @@
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\Definitions.FeedTheTeddy.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\FeedTheTeddySaveGame.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/SaveGame.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SaveGame.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\FeedTheTeddySaveGame.generated.h
