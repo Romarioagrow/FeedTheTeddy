@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPlayerController() {}
 	FEEDTHETEDDY_API UClass* Z_Construct_UClass_ABurgerPlayerController();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 	UPackage* Z_Construct_UPackage__Script_FeedTheTeddy();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 // End Cross Module References
 	void ABurgerPlayerController::StaticRegisterNativesABurgerPlayerController()
 	{
@@ -31,6 +33,11 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPlayerController() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PauseMenuWidgetClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_PauseMenuWidgetClass;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +53,16 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPlayerController() {}
 		{ "ModuleRelativePath", "BurgerPlayerController.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABurgerPlayerController_Statics::NewProp_PauseMenuWidgetClass_MetaData[] = {
+		{ "Category", "Widgets" },
+		{ "ModuleRelativePath", "BurgerPlayerController.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABurgerPlayerController_Statics::NewProp_PauseMenuWidgetClass = { "PauseMenuWidgetClass", nullptr, (EPropertyFlags)0x0024080000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABurgerPlayerController, PauseMenuWidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ABurgerPlayerController_Statics::NewProp_PauseMenuWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABurgerPlayerController_Statics::NewProp_PauseMenuWidgetClass_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABurgerPlayerController_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABurgerPlayerController_Statics::NewProp_PauseMenuWidgetClass,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABurgerPlayerController_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABurgerPlayerController>::IsAbstract,
 	};
@@ -55,11 +72,11 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPlayerController() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ABurgerPlayerController_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ABurgerPlayerController_Statics::PropPointers),
 		0,
 		0x009002A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABurgerPlayerController_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABurgerPlayerController_Statics::Class_MetaDataParams))
@@ -73,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPlayerController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABurgerPlayerController, 1532722476);
+	IMPLEMENT_CLASS(ABurgerPlayerController, 3223535732);
 	template<> FEEDTHETEDDY_API UClass* StaticClass<ABurgerPlayerController>()
 	{
 		return ABurgerPlayerController::StaticClass();
