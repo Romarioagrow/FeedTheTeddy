@@ -25,3 +25,43 @@ void AEventManagerActor::Tick(float DeltaTime)
 
 }
 
+void AEventManagerActor::AddPointsAddedEventInvoker(AFriesActor* Invoker)
+{
+}
+
+void AEventManagerActor::RemovePointsAddedEventInvoker(AFriesActor* Invoker)
+{
+}
+
+void AEventManagerActor::AddPointsAddedEventInvoker(AFeedTheTeddyGameModeBase* Invoker)
+{
+}
+
+void AEventManagerActor::AddPointsAddedEventListener(AFeedTheTeddyGameModeBase* Invoker)
+{
+}
+
+void AEventManagerActor::RemovePointsAddedEventListener(AFeedTheTeddyGameModeBase* Listener)
+{
+}
+
+void AEventManagerActor::AddGameOverEventInvoker(ABurgerPawn* Invoker)
+{
+}
+
+void AEventManagerActor::RemoveGameOverEventInvoker(ABurgerPawn* Invoker)
+{
+}
+
+void AEventManagerActor::AddGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
+{
+}
+
+void AEventManagerActor::RemoveGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
+{
+}
+
+void AEventManagerActor::RemoveOintsAddedEventInvoker(AFriesActor* Invoker)
+{
+}
+

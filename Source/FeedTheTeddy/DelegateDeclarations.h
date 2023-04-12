@@ -6,6 +6,12 @@
 #include "UObject/NoExportTypes.h"
 #include "DelegateDeclarations.generated.h"
 
+// points added event
+DECLARE_MULTICAST_DELEGATE_OneParam(FPointsAddedEvent, int);
+
+// game over event
+DECLARE_MULTICAST_DELEGATE(FGameOverEvent);
+
 /**
  * 
  */

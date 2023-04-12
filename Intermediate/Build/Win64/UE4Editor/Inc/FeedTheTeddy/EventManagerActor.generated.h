@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FEEDTHETEDDY_EventManagerActor_generated_h
 
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_SPARSE_DATA
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_RPC_WRAPPERS
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_INCLASS_NO_PURE_DECLS \
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_SPARSE_DATA
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_RPC_WRAPPERS
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEventManagerActor(); \
 	friend struct Z_Construct_UClass_AEventManagerActor_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AEventManagerActor)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_INCLASS \
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesAEventManagerActor(); \
 	friend struct Z_Construct_UClass_AEventManagerActor_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AEventManagerActor)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_STANDARD_CONSTRUCTORS \
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEventManagerActor(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEventManagerActor) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_ENHANCED_CONSTRUCTORS \
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEventManagerActor(AEventManagerActor&&); \
@@ -58,28 +58,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEventManagerActor)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_PRIVATE_PROPERTY_OFFSET
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_9_PROLOG
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_GENERATED_BODY_LEGACY \
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_PRIVATE_PROPERTY_OFFSET
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_13_PROLOG
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_SPARSE_DATA \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_RPC_WRAPPERS \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_INCLASS \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_STANDARD_CONSTRUCTORS \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_PRIVATE_PROPERTY_OFFSET \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_SPARSE_DATA \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_RPC_WRAPPERS \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_INCLASS \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_GENERATED_BODY \
+#define FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_SPARSE_DATA \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_INCLASS_NO_PURE_DECLS \
-	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_12_ENHANCED_CONSTRUCTORS \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_PRIVATE_PROPERTY_OFFSET \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_SPARSE_DATA \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_INCLASS_NO_PURE_DECLS \
+	FeedTheTeddy_Source_FeedTheTeddy_EventManagerActor_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
