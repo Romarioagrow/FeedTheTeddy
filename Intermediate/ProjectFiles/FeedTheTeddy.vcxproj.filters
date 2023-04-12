@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\FeedTheTeddy.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F7000449-BEDC-4BE9-8668-8A8F68B24937}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FeedTheTeddy.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\FeedTheTeddyEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{F27D9694-874E-4E27-82D9-2BBD6F9F0C8D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\FeedTheTeddy">
+      <UniqueIdentifier>{C1A1DC84-A6A4-466C-B2DA-2DDB016B5516}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\BurgerPawn.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\BurgerPawn.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\BurgerPlayerController.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\BurgerPlayerController.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\ConfigurationDataActor.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\ConfigurationDataActor.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\DelegateDeclarations.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\DelegateDeclarations.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\EventManagerActor.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\EventManagerActor.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\FeedTheTeddy\FeedTheTeddy.Build.cs">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\FeedTheTeddy.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\FeedTheTeddy.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\FeedTheTeddyGameModeBase.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\FeedTheTeddyGameModeBase.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\TeddyBearActor.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\TeddyBearActor.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\TeddyBearProjectileActor.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\TeddyBearProjectileActor.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\TeddyBearSpawnerActor.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\TeddyBearSpawnerActor.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-FeedTheTeddy-7370.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\FeedTheTeddyEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\BurgerPawn.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\BurgerPlayerController.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\DelegateDeclarations.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\FeedTheTeddy.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\FeedTheTeddyGameModeBase.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\TeddyBearActor.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\TeddyBearProjectileActor.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\TeddyBearSpawnerActor.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\BurgerPawn.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\BurgerPlayerController.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\DelegateDeclarations.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\FeedTheTeddy.init.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\FeedTheTeddyGameModeBase.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\TeddyBearActor.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\TeddyBearProjectileActor.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\TeddyBearSpawnerActor.gen.cpp.obj"
+"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\Default.rc2.res"
+/OUT:"C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\UE4Editor-FeedTheTeddy-7370.lib"
