@@ -2,6 +2,8 @@
 
 
 #include "BurgerPawn.h"
+
+#include "ScreenConstants.h"
 #include "EventManagerActor.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -46,6 +48,13 @@ void ABurgerPawn::BeginPlay()
 		AEventManagerActor* EventManager = Cast<AEventManagerActor>(TaggedActors[0]);
 		EventManager->AddGameOverEventInvoker(this);
 	}
+
+	// save for efficiency
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "ConfigurationData", TaggedActors);
+	if (TaggedActors.Num() > 0)
+	{
+		ConfigurationData = Cast<AConfigurationDataActor>(TaggedActors[0]);
+	}
 	
 }
 
@@ -54,33 +63,82 @@ void ABurgerPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector PendingMovementInput = ConsumeMovementInputVector();
+	if (PendingMovementInput.Y != 0 ||
+		PendingMovementInput.Z != 0)
+	{
+		float MoveAmountPerSecond = ConfigurationData->GetBurgerMoveSpeed() * DeltaTime;
+		FVector NewLocation = GetActorLocation();
+		NewLocation.Y += PendingMovementInput.Y * MoveAmountPerSecond * DeltaTime;
+		NewLocation.Y = FMath::Clamp(NewLocation.Y, 
+			ScreenConstants::Left + HalfCollisionWidth,
+			ScreenConstants::Right - HalfCollisionWidth);
+		NewLocation.Z += PendingMovementInput.Z * MoveAmountPerSecond * DeltaTime;
+		NewLocation.Z = FMath::Clamp(NewLocation.Z,
+						ScreenConstants::Bottom + HalfCollisionHeight,
+						ScreenConstants::Top - HalfCollisionHeight - TopClampKludgeAmount);
+		SetActorLocation(NewLocation);
+	}
+
 }
 
 // Called to bind functionality to input
 void ABurgerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 
 void ABurgerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	if (OtherActor != nullptr)
+	{
+		if (OtherActor->ActorHasTag("TeddyBear"))
+		{
+			Health -= ConfigurationData->GetBearDamage();
+			HealthPercent = StaticCast<float>(Health) / MaxHealth;
+			OtherActor->Destroy();
+			CheckGameOver();
+		}
+		else if (OtherActor->ActorHasTag("TeddyBearProjectile"))
+		{
+			Health -= ConfigurationData->GetBearProjectileDamage();
+			HealthPercent = StaticCast<float>(Health) / MaxHealth;
+			OtherActor->Destroy();
+			CheckGameOver();
+		}
+	}
 }
 
-void ABurgerPawn::MoveHorizontaly(float moveScale)
+void ABurgerPawn::MoveHorizontally(float moveScale)
 {
+	moveScale = FMath::Clamp(moveScale, -1.0f, 1.0f);
+	AddMovementInput(GetActorRightVector(), moveScale);
 }
 
 void ABurgerPawn::MoveVertically(float moveScale)
 {
+	moveScale = FMath::Clamp(moveScale, -1.0f, 1.0f);
+	AddMovementInput(GetActorUpVector(), moveScale);
 }
 
 void ABurgerPawn::Shoot()
 {
+	// spawn projectile
+	FVector SpawnLocation = GetActorLocation();
+	SpawnLocation.Z += HalfCollisionHeight;
+	GetWorld()->SpawnActor<AFriesActor>(UFries, SpawnLocation, FRotator::ZeroRotator);
 }
 
 void ABurgerPawn::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
+	// remove from event manager
+	TArray<AActor*>	TaggedActors;
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "EventManager", TaggedActors);
+	if (TaggedActors.Num() > 0)
+	{
+		AEventManagerActor* EventManager = Cast<AEventManagerActor>(TaggedActors[0]);
+		EventManager->RemoveGameOverEventInvoker(this);
+	}
 }
 
 FGameOverEvent& ABurgerPawn::GetGameOverEvent()
@@ -91,5 +149,9 @@ FGameOverEvent& ABurgerPawn::GetGameOverEvent()
 
 void ABurgerPawn::CheckGameOver()
 {
+	if (Health <= 0)
+	{
+		GameOverEvent.Broadcast();
+	}
 }
 

@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "BurgerPawn.h"
 #include "Blueprint/UserWidget.h"
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
@@ -19,8 +20,17 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 		TSubclassOf<UUserWidget> PauseMenuWidgetClass;
 
+	virtual void BeginPlay() override;
+
 private:
 	void PauseGame();
+
+	void MoveHorizontally(float AxisValue);
+
+	void MoveVertically(float AxisValue);
+
+	UPROPERTY()
+		ABurgerPawn* ControlledBurgerPawn;
 
 public:
 	virtual void SetupInputComponent() override;

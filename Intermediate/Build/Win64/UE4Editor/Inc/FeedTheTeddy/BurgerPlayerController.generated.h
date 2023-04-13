@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FEEDTHETEDDY_BurgerPlayerController_generated_h
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_SPARSE_DATA
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_RPC_WRAPPERS
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_RPC_WRAPPERS_NO_PURE_DECLS
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_INCLASS_NO_PURE_DECLS \
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_SPARSE_DATA
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_RPC_WRAPPERS
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABurgerPlayerController(); \
 	friend struct Z_Construct_UClass_ABurgerPlayerController_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ABurgerPlayerController)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_INCLASS \
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesABurgerPlayerController(); \
 	friend struct Z_Construct_UClass_ABurgerPlayerController_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ABurgerPlayerController)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_STANDARD_CONSTRUCTORS \
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABurgerPlayerController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABurgerPlayerController) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_ENHANCED_CONSTRUCTORS \
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABurgerPlayerController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,31 +60,32 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABurgerPlayerController)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__PauseMenuWidgetClass() { return STRUCT_OFFSET(ABurgerPlayerController, PauseMenuWidgetClass); }
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__PauseMenuWidgetClass() { return STRUCT_OFFSET(ABurgerPlayerController, PauseMenuWidgetClass); } \
+	FORCEINLINE static uint32 __PPO__ControlledBurgerPawn() { return STRUCT_OFFSET(ABurgerPlayerController, ControlledBurgerPawn); }
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_13_PROLOG
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_GENERATED_BODY_LEGACY \
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_14_PROLOG
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_PRIVATE_PROPERTY_OFFSET \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_SPARSE_DATA \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_RPC_WRAPPERS \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_INCLASS \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_STANDARD_CONSTRUCTORS \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_PRIVATE_PROPERTY_OFFSET \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_SPARSE_DATA \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_RPC_WRAPPERS \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_INCLASS \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_GENERATED_BODY \
+#define FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_PRIVATE_PROPERTY_OFFSET \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_SPARSE_DATA \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_INCLASS_NO_PURE_DECLS \
-	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_16_ENHANCED_CONSTRUCTORS \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_PRIVATE_PROPERTY_OFFSET \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_SPARSE_DATA \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_INCLASS_NO_PURE_DECLS \
+	FeedTheTeddy_Source_FeedTheTeddy_BurgerPlayerController_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

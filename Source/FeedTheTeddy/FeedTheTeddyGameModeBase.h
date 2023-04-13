@@ -2,6 +2,7 @@
 
 #pragma once
 #include "Blueprint/UserWidget.h"
+#include "DelegateDeclarations.h"
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
@@ -14,10 +15,22 @@ UCLASS()
 class FEEDTHETEDDY_API AFeedTheTeddyGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+private:
+	// event support
+	FPointsAddedEvent PointsAddedEvent;
+
+	FGameOverEvent GameOverEvent;
+
+	int SecondsLeft{ 0 };
+
+	void StartOneSecondTimer();
+
+	void ChangeSecondsTimer();
+
+	void AddPoints(int Points);
 
 public:
-	//int HighScore{ 0 };
 	int Score{ 0 };
 
 	void EndGame();
@@ -27,4 +40,8 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+	FDelegateHandle AddToPointsAddedEvent();
+
+	FDelegateHandle AddToGameOverEvent();
 };

@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+
 #include "FriesActor.h"
 #include "DelegateDeclarations.h"
-
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "BurgerPawn.generated.h"
@@ -22,12 +22,13 @@ private:
 	FGameOverEvent GameOverEvent;
 
 	// saved for efficiency
-	AConfigurationDataActor* ConfigurationDataActor;
+	AConfigurationDataActor* ConfigurationData;
 
 public:
 	// Sets default values for this pawn's properties
 	ABurgerPawn();
 
+	// projectile
 	UPROPERTY(EditAnywhere,
 		meta = (MetaClass = "Fries"),
 		Category = "Components")
@@ -72,7 +73,7 @@ public:
 	 * @brief 
 	 * @param moveScale 
 	*/
-	void MoveHorizontaly(float moveScale);
+	void MoveHorizontally(float moveScale);
 
 	/**
 	 * @brief 

@@ -2,4 +2,8 @@ C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\U
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy/TeddyBearActor.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\TeddyBearProjectileActor.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\TeddyBearProjectileActor.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\ConfigurationDataActor.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\ConfigurationDataActor.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\TeddyBearActor.generated.h

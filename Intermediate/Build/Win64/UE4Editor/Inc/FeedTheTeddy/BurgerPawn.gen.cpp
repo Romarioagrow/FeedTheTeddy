@@ -220,8 +220,10 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABurgerPawn_Statics::NewProp_UFries_MetaData[] = {
 		{ "Category", "Components" },
+		{ "Comment", "// projectile\n" },
 		{ "MetaClass", "Fries" },
 		{ "ModuleRelativePath", "BurgerPawn.h" },
+		{ "ToolTip", "projectile" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABurgerPawn_Statics::NewProp_UFries = { "UFries", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABurgerPawn, UFries), Z_Construct_UClass_AFriesActor_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ABurgerPawn_Statics::NewProp_UFries_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABurgerPawn_Statics::NewProp_UFries_MetaData)) };
@@ -263,7 +265,7 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABurgerPawn, 1210615165);
+	IMPLEMENT_CLASS(ABurgerPawn, 1568685264);
 	template<> FEEDTHETEDDY_API UClass* StaticClass<ABurgerPawn>()
 	{
 		return ABurgerPawn::StaticClass();

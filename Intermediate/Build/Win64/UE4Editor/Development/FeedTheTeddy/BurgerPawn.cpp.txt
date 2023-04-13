@@ -13,6 +13,7 @@ C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\Config
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\ConfigurationDataActor.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\FriesActor.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\BurgerPawn.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\ScreenConstants.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\EventManagerActor.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\FeedTheTeddyGameModeBase.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\UMG\Public\Blueprint/UserWidget.h

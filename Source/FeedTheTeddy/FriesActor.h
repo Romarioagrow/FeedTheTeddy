@@ -21,7 +21,7 @@ private:
 	FPointsAddedEvent PointsAddedEvent;
 
 	// saved data
-	AConfigurationDataActor* ConfigurationDataActor;
+	AConfigurationDataActor* ConfigurationData;
 
 public:	
 	// Sets default values for this actor's properties
