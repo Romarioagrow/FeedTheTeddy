@@ -17,8 +17,6 @@ void ATeddyBearProjectileActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
-
-	
 	// save for efficiency
 	TArray<AActor*> TaggedActors;
 	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "ConfigurationData", TaggedActors);
@@ -26,6 +24,36 @@ void ATeddyBearProjectileActor::BeginPlay()
 	{
 		ConfigurationData = Cast<AConfigurationDataActor>(TaggedActors[0]);
 	}
+
+	// Получить ссылку на пешку игрока
+	APawn* PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
+	if (PlayerPawn != nullptr)
+	{
+		// Получить позицию пешки игрока
+		FVector PlayerPawnLocation = PlayerPawn->GetActorLocation();
+
+		// Вычислить направление от текущей позиции актора к пешке игрока
+		FVector Direction = PlayerPawnLocation - GetActorLocation();
+
+		// Нормализовать направление и умножить на желаемую силу импульса
+		float ImpulseStrength = 100.0f;
+		FVector ImpulseForce = Direction.GetSafeNormal() * ImpulseStrength;
+
+		// Применить импульс к компоненту StaticMeshComponent актора
+		
+		// find static mesh component
+		TArray<UStaticMeshComponent*> StaticMeshComponents;
+		GetComponents(StaticMeshComponents);
+
+		// make sure the static mesh is found
+		if (StaticMeshComponents.Num() > 0)
+		{
+			// get static mesh component
+			UStaticMeshComponent* StaticMeshComponent = StaticMeshComponents[0];
+			StaticMeshComponent->AddImpulse(ImpulseForce);
+		}
+	}
+
 }
 
 // Called every frame

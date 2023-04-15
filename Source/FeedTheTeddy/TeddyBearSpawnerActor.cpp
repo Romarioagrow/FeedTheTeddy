@@ -33,7 +33,6 @@ void ATeddyBearSpawnerActor::StartSpawner()
 
 void ATeddyBearSpawnerActor::SpawnBear()
 {
-	//FVector SpawnLocation = GetActorLocation();
 	FVector SpawnLocation{0.0f, FMath::RandRange(-128.0f, 128.0f), FMath::RandRange(-128.0f, 128.0f) };
 	FRotator SpawnRotation = GetActorRotation();
 	GetWorld()->SpawnActor<ATeddyBearActor>(TeddyBearClass, SpawnLocation, SpawnRotation);

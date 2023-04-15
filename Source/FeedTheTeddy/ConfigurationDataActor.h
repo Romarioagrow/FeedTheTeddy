@@ -22,13 +22,13 @@ private:
 
 	int PointsForTeddyBear{ 10 };
 
-	float MinBearImpulseForce{ 10.0f };
+	float MinBearImpulseForce{ 50.0f };
 
-	float MaxBearImpulseForce{ 20.0f };
+	float MaxBearImpulseForce{ 100.0f };
 
-	float MinBearShootTimerDuration{ 1.0f };
+	float MinBearShootTimerDuration{ 3.0f };
 
-	float MaxBearShootTimerDuration{ 2.0f };
+	float MaxBearShootTimerDuration{ 4.0f };
 
 	int TotalGameSeconds{ 30 };
 

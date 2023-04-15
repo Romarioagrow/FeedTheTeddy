@@ -104,6 +104,9 @@ void ATeddyBearActor::Tick(float DeltaTime)
 		{
 			Location.Z *= -1;
 		}
+
+		// Set the new location for the actor
+		SetActorLocation(Location);
 	}
 }
 

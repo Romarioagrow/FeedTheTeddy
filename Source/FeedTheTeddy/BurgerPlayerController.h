@@ -34,4 +34,6 @@ private:
 
 public:
 	virtual void SetupInputComponent() override;
+
+	void Fire();
 };

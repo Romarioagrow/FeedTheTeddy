@@ -64,8 +64,17 @@ void ABurgerPlayerController::SetupInputComponent()
 
 	// game pause action
 	InputComponent->BindAction("PauseGame", IE_Pressed, this, &ABurgerPlayerController::PauseGame);
+	InputComponent->BindAction("Fire", IE_Pressed, this, &ABurgerPlayerController::Fire);
 
 	// pawn moving actions
 	InputComponent->BindAxis("MoveHorizontally", this, &ABurgerPlayerController::MoveHorizontally);
 	InputComponent->BindAxis("MoveVertically", this, &ABurgerPlayerController::MoveVertically);
+}
+
+void ABurgerPlayerController::Fire()
+{
+	if (ControlledBurgerPawn != nullptr)
+	{
+		ControlledBurgerPawn->Shoot();
+	}
 }
