@@ -22,10 +22,14 @@ void AFeedTheTeddyGameModeBase::BeginPlay()
 	}
 
 	// add hud
-	/*if (HudWidgetClass != nullptr)
+	if (HudWidgetClass != nullptr)
 	{
-		UUserWidget* CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), )
-	}*/
+		UUserWidget* CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), HudWidgetClass);
+		if (CurrentWidget != nullptr)
+		{
+			CurrentWidget->AddToViewport();
+		}
+	}
 
 	// start timer
 	UGameplayStatics::GetAllActorsWithTag(
@@ -57,6 +61,11 @@ FDelegateHandle AFeedTheTeddyGameModeBase::AddToPointsAddedEvent()
 FDelegateHandle AFeedTheTeddyGameModeBase::AddToGameOverEvent()
 {
 	return GameOverEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::EndGame);
+}
+
+AFeedTheTeddyGameModeBase::AFeedTheTeddyGameModeBase()
+{
+	HUDClass = ATeddyHUD::StaticClass();
 }
 
 void AFeedTheTeddyGameModeBase::EndGame()

@@ -30,7 +30,7 @@ private:
 
 	float MaxBearShootTimerDuration{ 2.0f };
 
-	int TotalGameSeconds{ 60 };
+	int TotalGameSeconds{ 30 };
 	
 public:	
 	// Sets default values for this actor's properties

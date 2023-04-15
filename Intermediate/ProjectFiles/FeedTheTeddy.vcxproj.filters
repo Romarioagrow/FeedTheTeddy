@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\FeedTheTeddy.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2312DE2B-C0DD-48FB-AB73-350CB753944B}</UniqueIdentifier>
+      <UniqueIdentifier>{DECA637A-6DBF-445A-BC50-3E08F02C93C8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\FeedTheTeddy.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{47223651-402D-4785-AF67-F5F24DE48FF7}</UniqueIdentifier>
+      <UniqueIdentifier>{108B236C-90EF-4DE9-8E7B-552C041E9D31}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -25,8 +25,11 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Source\FeedTheTeddy">
-      <UniqueIdentifier>{F8A6504C-78C5-4BFF-ABDB-2EFE5DA50C68}</UniqueIdentifier>
+      <UniqueIdentifier>{953150E8-2DE4-4428-9FA7-839ACC73CFF9}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\FeedTheTeddy\BurgerPawn.cpp">
       <Filter>Source\FeedTheTeddy</Filter>
@@ -107,6 +110,12 @@
       <Filter>Source\FeedTheTeddy</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FeedTheTeddy\TeddyBearSpawnerActor.h">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FeedTheTeddy\TeddyHUD.cpp">
+      <Filter>Source\FeedTheTeddy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FeedTheTeddy\TeddyHUD.h">
       <Filter>Source\FeedTheTeddy</Filter>
     </ClInclude>
   </ItemGroup>

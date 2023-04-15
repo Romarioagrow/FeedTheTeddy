@@ -34,9 +34,21 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddyGameModeBase() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Score_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Score;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SecondsLeft_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_SecondsLeft;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GameOverWidgetClass_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_GameOverWidgetClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HudWidgetClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_HudWidgetClass;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -55,14 +67,38 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddyGameModeBase() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_Score_MetaData[] = {
+		{ "Category", "Score" },
+		{ "ModuleRelativePath", "FeedTheTeddyGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_Score = { "Score", nullptr, (EPropertyFlags)0x0010000000000014, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFeedTheTeddyGameModeBase, Score), METADATA_PARAMS(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_Score_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_Score_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_SecondsLeft_MetaData[] = {
+		{ "Category", "SecondsLeft" },
+		{ "ModuleRelativePath", "FeedTheTeddyGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_SecondsLeft = { "SecondsLeft", nullptr, (EPropertyFlags)0x0010000000000014, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFeedTheTeddyGameModeBase, SecondsLeft), METADATA_PARAMS(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_SecondsLeft_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_SecondsLeft_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_GameOverWidgetClass_MetaData[] = {
 		{ "Category", "Widgets" },
 		{ "ModuleRelativePath", "FeedTheTeddyGameModeBase.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_GameOverWidgetClass = { "GameOverWidgetClass", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFeedTheTeddyGameModeBase, GameOverWidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_GameOverWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_GameOverWidgetClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_HudWidgetClass_MetaData[] = {
+		{ "Category", "HUD" },
+		{ "ModuleRelativePath", "FeedTheTeddyGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_HudWidgetClass = { "HudWidgetClass", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFeedTheTeddyGameModeBase, HudWidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_HudWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_HudWidgetClass_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_Score,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_SecondsLeft,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_GameOverWidgetClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::NewProp_HudWidgetClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFeedTheTeddyGameModeBase>::IsAbstract,
@@ -91,7 +127,7 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddyGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFeedTheTeddyGameModeBase, 825989499);
+	IMPLEMENT_CLASS(AFeedTheTeddyGameModeBase, 4266072944);
 	template<> FEEDTHETEDDY_API UClass* StaticClass<AFeedTheTeddyGameModeBase>()
 	{
 		return AFeedTheTeddyGameModeBase::StaticClass();
