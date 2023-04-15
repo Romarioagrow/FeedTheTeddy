@@ -22,6 +22,7 @@ void EmptyLinkFunctionForGeneratedCodeTeddyBearActor() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	FEEDTHETEDDY_API UClass* Z_Construct_UClass_ATeddyBearProjectileActor_NoRegister();
+	FEEDTHETEDDY_API UClass* Z_Construct_UClass_UHomingActorInterface_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ATeddyBearActor::execOnOverlapBegin)
 	{
@@ -141,6 +142,7 @@ void EmptyLinkFunctionForGeneratedCodeTeddyBearActor() {}
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_UProjectileClass;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -168,6 +170,9 @@ void EmptyLinkFunctionForGeneratedCodeTeddyBearActor() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATeddyBearActor_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATeddyBearActor_Statics::NewProp_UProjectileClass,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ATeddyBearActor_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UHomingActorInterface_NoRegister, (int32)VTABLE_OFFSET(ATeddyBearActor, IHomingActorInterface), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATeddyBearActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATeddyBearActor>::IsAbstract,
 	};
@@ -178,11 +183,11 @@ void EmptyLinkFunctionForGeneratedCodeTeddyBearActor() {}
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_ATeddyBearActor_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ATeddyBearActor_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ATeddyBearActor_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ATeddyBearActor_Statics::Class_MetaDataParams))
 	};
@@ -195,7 +200,7 @@ void EmptyLinkFunctionForGeneratedCodeTeddyBearActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATeddyBearActor, 4225480318);
+	IMPLEMENT_CLASS(ATeddyBearActor, 358571531);
 	template<> FEEDTHETEDDY_API UClass* StaticClass<ATeddyBearActor>()
 	{
 		return ATeddyBearActor::StaticClass();

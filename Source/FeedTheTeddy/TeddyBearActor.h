@@ -1,14 +1,17 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include "HomingActorComponent.h"
+#include "HomingActorInterface.h"
 #include "TeddyBearProjectileActor.h"
-#include "ConfigurationDataActor.h"
+#include "Sound/SoundCue.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "TeddyBearActor.generated.h"
 
 UCLASS()
-class FEEDTHETEDDY_API ATeddyBearActor : public AActor
+class FEEDTHETEDDY_API ATeddyBearActor : public AActor, public IHomingActorInterface
 {
 	GENERATED_BODY()
 
@@ -19,6 +22,17 @@ private:
 	float HalfCollisionHeight, HalfCollisionWidth;
 
 	float ProjectileOffsetAmount{ 10 };
+
+	// saved for efficiency
+	//AConfigurationDataActor* ConfigurationData;
+
+	// saved for interface implementation
+	UStaticMeshComponent* StaticMeshComponent;
+
+	float ImpulseForce;
+
+	// homing support
+	UHomingActorComponent* HomingComponent;
 
 	void StartShootTimer();
 
@@ -34,6 +48,12 @@ public:
 		meta = (MetaClass = "Projectile"),
 		Category = "Components")
 		TSubclassOf<ATeddyBearProjectileActor> UProjectileClass;
+
+	UStaticMeshComponent* GetStaticMesh() override;
+
+	float GetImpulseForce() override;
+
+	float GetHomingDelay() override;
 
 protected:
 	// Called when the game starts or when spawned

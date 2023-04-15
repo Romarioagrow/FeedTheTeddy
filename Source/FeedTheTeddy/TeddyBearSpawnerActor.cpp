@@ -16,12 +16,26 @@ void ATeddyBearSpawnerActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	StartSpawner();
 }
 
 // Called every frame
 void ATeddyBearSpawnerActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
 
+void ATeddyBearSpawnerActor::StartSpawner()
+{
+	FTimerHandle TimerHandle;
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &ATeddyBearSpawnerActor::SpawnBear, SpawnDelay, true);
+}
+
+void ATeddyBearSpawnerActor::SpawnBear()
+{
+	//FVector SpawnLocation = GetActorLocation();
+	FVector SpawnLocation{0.0f, FMath::RandRange(-128.0f, 128.0f), FMath::RandRange(-128.0f, 128.0f) };
+	FRotator SpawnRotation = GetActorRotation();
+	GetWorld()->SpawnActor<ATeddyBearActor>(TeddyBearClass, SpawnLocation, SpawnRotation);
 }
 

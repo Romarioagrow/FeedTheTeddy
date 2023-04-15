@@ -31,6 +31,8 @@ private:
 	float MaxBearShootTimerDuration{ 2.0f };
 
 	int TotalGameSeconds{ 30 };
+
+	int BearHomingDelay{ 2 };
 	
 public:	
 	// Sets default values for this actor's properties
@@ -63,4 +65,6 @@ public:
 	float GetMaxBearShootTimerDuration();
 
 	int GetTotalGameSeconds();
+
+	int GetBearHomingDelay();
 };

@@ -1,14 +1,33 @@
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Development\FeedTheTeddy\Definitions.FeedTheTeddy.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\TeddyBearActor.h
-C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\TeddyBearProjectileActor.h
-C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\TeddyBearProjectileActor.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\HomingActorComponent.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\BurgerPawn.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\FriesActor.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\DelegateDeclarations.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\AssetRegistry/ARFilter.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\DelegateDeclarations.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\ConfigurationDataActor.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\ConfigurationDataActor.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\FriesActor.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\BurgerPawn.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\HomingActorComponent.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\HomingActorInterface.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\HomingActorInterface.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\TeddyBearProjectileActor.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\TeddyBearProjectileActor.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/SoundCue.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/SoundNode.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SoundNode.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SoundCue.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\TeddyBearActor.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\ScreenConstants.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h

@@ -2,7 +2,7 @@
 
 
 #include "TeddyBearActor.h"
-#include "TeddyBearProjectileActor.h"
+
 #include "ScreenConstants.h"
 #include "Kismet/GameplayStatics.h"
 #include "ConfigurationDataActor.h"
@@ -13,6 +13,21 @@ ATeddyBearActor::ATeddyBearActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+}
+
+UStaticMeshComponent* ATeddyBearActor::GetStaticMesh()
+{
+	return StaticMeshComponent;
+}
+
+float ATeddyBearActor::GetImpulseForce()
+{
+	return ImpulseForce;
+}
+
+float ATeddyBearActor::GetHomingDelay()
+{
+	return ConfigurationData->GetBearHomingDelay();
 }
 
 // Called when the game starts or when spawned
@@ -41,23 +56,29 @@ void ATeddyBearActor::BeginPlay()
 	// make sure static mesh is found
 	if (StaticMeshComponents.Num() > 0)
 	{
-		UStaticMeshComponent* StaticMesh = StaticMeshComponents[0];
+		//UStaticMeshComponent* StaticMesh = StaticMeshComponents[0];
+		StaticMeshComponent = StaticMeshComponents[0];
 
 		// set up delegate for collision on actor begin overlap
-		StaticMesh->OnComponentBeginOverlap.AddDynamic(this, &ATeddyBearActor::OnOverlapBegin);
+		StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ATeddyBearActor::OnOverlapBegin);
 
 		// add random force
-		float ImpulseForce = FMath::RandRange(
+		ImpulseForce = FMath::RandRange(
 			ConfigurationData->GetMinBearImpulseForce(),
 			ConfigurationData->GetMaxBearImpulseForce());
 		FVector Force{ 0 };
 		float Angle = FMath::RandRange(0.0f, 2 * PI);
 		Force.Y = FMath::Cos(Angle) * ImpulseForce;
 		Force.Z = FMath::Sin(Angle) * ImpulseForce;
-		StaticMesh->AddImpulse(Force);
+		StaticMeshComponent->AddImpulse(Force);
 	}
 
 	StartShootTimer();
+
+	// add, check and register homing component
+	HomingComponent = NewObject<UHomingActorComponent>(this);
+	check(HomingComponent != nullptr);
+	HomingComponent->RegisterComponent();
 }
 
 // Called every frame

@@ -79,7 +79,6 @@ void ABurgerPawn::Tick(float DeltaTime)
 						ScreenConstants::Top - HalfCollisionHeight - TopClampKludgeAmount);
 		SetActorLocation(NewLocation);
 	}
-
 }
 
 // Called to bind functionality to input

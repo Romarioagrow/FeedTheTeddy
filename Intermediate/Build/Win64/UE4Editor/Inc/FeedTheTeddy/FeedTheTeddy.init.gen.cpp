@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddy_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xEB8D4901,
-				0x56869EA7,
+				0xF9C466F4,
+				0xB33971F4,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

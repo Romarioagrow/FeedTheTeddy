@@ -72,3 +72,8 @@ int AConfigurationDataActor::GetTotalGameSeconds()
 	return TotalGameSeconds;
 }
 
+int AConfigurationDataActor::GetBearHomingDelay()
+{
+	return BearHomingDelay;
+}
+
