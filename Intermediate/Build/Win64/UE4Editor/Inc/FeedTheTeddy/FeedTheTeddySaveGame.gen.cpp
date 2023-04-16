@@ -56,7 +56,7 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddySaveGame() {}
 		{ "ModuleRelativePath", "FeedTheTeddySaveGame.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore = { "HighScore", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFeedTheTeddySaveGame, HighScore), METADATA_PARAMS(Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore = { "HighScore", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFeedTheTeddySaveGame, HighScore), METADATA_PARAMS(Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFeedTheTeddySaveGame_Statics::NewProp_HighScore,
 	};
@@ -87,7 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddySaveGame() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UFeedTheTeddySaveGame, 1990641964);
+	IMPLEMENT_CLASS(UFeedTheTeddySaveGame, 1025387804);
 	template<> FEEDTHETEDDY_API UClass* StaticClass<UFeedTheTeddySaveGame>()
 	{
 		return UFeedTheTeddySaveGame::StaticClass();

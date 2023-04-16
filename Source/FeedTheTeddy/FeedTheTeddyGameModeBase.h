@@ -1,6 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #pragma once
+#include "FeedTheTeddySaveGame.h"
 #include "Engine/Classes/GameFramework/HUD.h"
 #include "Blueprint/UserWidget.h"
 #include "DelegateDeclarations.h"
@@ -50,7 +51,7 @@ public:
 
 	FDelegateHandle AddToPointsAddedEvent(FPointsAddedEvent& PointsAddedEventToSubscribe);
 
-	FDelegateHandle AddToGameOverEvent(FPointsAddedEvent& PointsAddedEventToSubscribe);
+	FDelegateHandle AddToGameOverEvent(FGameOverEvent& GameOverEventToSubscribe);
 
 protected:
 	virtual void BeginPlay() override;

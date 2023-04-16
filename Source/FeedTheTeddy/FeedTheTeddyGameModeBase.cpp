@@ -43,20 +43,41 @@ void AFeedTheTeddyGameModeBase::BeginPlay()
 	}
 
 	// Проверьте, существует ли SaveSlot
-	if (!UGameplayStatics::DoesSaveGameExist("FeedTheTeddySaveGame", 0))
+	const FString SaveSlotName = TEXT("FeedTheTeddySaveSlot");
+	const int32 UserIndex = 0;
+
+	// Создаем экземпляр класса UFeedTheTeddySaveGame
+	UFeedTheTeddySaveGame* SaveGameInstance = Cast<UFeedTheTeddySaveGame>(UGameplayStatics::CreateSaveGameObject(UFeedTheTeddySaveGame::StaticClass()));
+
+	// Загружаем сохраненные данные
+	if (UGameplayStatics::DoesSaveGameExist(SaveSlotName, UserIndex))
 	{
-		// Если SaveSlot не существует, создайте его
-		UFeedTheTeddySaveGame* SaveGameInstance = Cast<UFeedTheTeddySaveGame>(
-			UGameplayStatics::CreateSaveGameObject(
-				UFeedTheTeddySaveGame::StaticClass()));
-		SaveGameInstance->HighScore = 0;
-		UGameplayStatics::SaveGameToSlot(SaveGameInstance, "FeedTheTeddySaveGame", 0);
+		SaveGameInstance = Cast<UFeedTheTeddySaveGame>(UGameplayStatics::LoadGameFromSlot(SaveSlotName, UserIndex));
+		if (SaveGameInstance)
+		{
+			// Доступ к сохраненным данным, например:
+			int32 LoadedHighScore = SaveGameInstance->HighScore;
+		}
 	}
+	else
+	{
+		// Установка значений по умолчанию, если сохраненной игры не существует
+		SaveGameInstance->HighScore = 0;
+	}
+
+	// Сохраняем данные
+	// Вам нужно изменить HighScore на новое значение, которое вы хотите сохранить
+	//SaveGameInstance->HighScore = NewHighScore;
+	UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveSlotName, UserIndex);
 }
 
+/**
+ * @brief 
+ * @param PointsAddedEventToSubscribe 
+ * @return 
+*/
 FDelegateHandle AFeedTheTeddyGameModeBase::AddToPointsAddedEvent(FPointsAddedEvent& PointsAddedEventToSubscribe)
 {
-	
 	FDelegateHandle DelegateHandle = PointsAddedEventToSubscribe.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
 	UE_LOG(LogTemp, Warning, TEXT("Subscribed to PointsAddedEvent with Handle "));
 	return DelegateHandle;
@@ -64,9 +85,16 @@ FDelegateHandle AFeedTheTeddyGameModeBase::AddToPointsAddedEvent(FPointsAddedEve
 	//return PointsAddedEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
 }
 
-FDelegateHandle AFeedTheTeddyGameModeBase::AddToGameOverEvent(FPointsAddedEvent& PointsAddedEventToSubscribe)
+/**
+ * @brief 
+ * @param PointsAddedEventToSubscribe 
+ * @return 
+*/
+FDelegateHandle AFeedTheTeddyGameModeBase::AddToGameOverEvent(FGameOverEvent& GameOverEventToSubscribe)
 {
-	return GameOverEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::EndGame);
+	FDelegateHandle DelegateHandle = GameOverEventToSubscribe.AddUObject(this, &AFeedTheTeddyGameModeBase::EndGame);
+	UE_LOG(LogTemp, Warning, TEXT("Subscribed to GameOverEvent with Handle "));
+	return DelegateHandle;
 }
 
 AFeedTheTeddyGameModeBase::AFeedTheTeddyGameModeBase()

@@ -14,9 +14,9 @@ class FEEDTHETEDDY_API AConfigurationDataActor : public AActor
 private:
 	float BurgerMoveSpeed{ 5500.0f };
 
-	float BearDamage{ 10.0f };
+	float BearDamage{ 50.0f };
 
-	float BearProjectileDamage{ 20.0f };
+	float BearProjectileDamage{ 50.0f };
 
 	float FriesImpulseForce{ 100.0f };
 
@@ -30,7 +30,7 @@ private:
 
 	float MaxBearShootTimerDuration{ 4.0f };
 
-	int TotalGameSeconds{ 30 };
+	int TotalGameSeconds{ 10 };
 
 	int BearHomingDelay{ 2 };
 	

@@ -15,7 +15,7 @@ class FEEDTHETEDDY_API UFeedTheTeddySaveGame : public USaveGame
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(VisibleAnywhere, Category = "Saved Game Data")
+	UPROPERTY(BlueprintReadWrite, Category = "Saved Game Data")
 	int HighScore{ 0 };
 	
 };

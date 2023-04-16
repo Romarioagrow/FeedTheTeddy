@@ -152,6 +152,7 @@ void ABurgerPawn::CheckGameOver()
 {
 	if (Health <= 0)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Game Over"));
 		GameOverEvent.Broadcast();
 	}
 }

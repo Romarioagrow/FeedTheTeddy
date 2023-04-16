@@ -30,7 +30,6 @@ void AEventManagerActor::AddPointsAddedEventInvoker(AFriesActor* Invoker)
 		FDelegateHandle DelegateHandle = Element.Key->AddToPointsAddedEvent(Invoker->GetPointsAddedEvent());
 		Element.Value.Add(Invoker, DelegateHandle);
 		UE_LOG(LogTemp, Warning, TEXT("Adding Invoker to EventManager"));
-
 	}
 }
 
@@ -68,89 +67,95 @@ void AEventManagerActor::RemovePointsAddedEventListener(AFeedTheTeddyGameModeBas
 	}
 }
 
-//void AEventManagerActor::AddPointsAddedEventInvoker(AFriesActor* Invoker)
+
+/**
+ * @brief 
+ * @param Invoker 
+*/
+void AEventManagerActor::AddGameOverEventInvoker(ABurgerPawn* Invoker)
+{
+	GameOverEventInvokers.Add(Invoker);
+	for (auto& Element : GameOverEventSubscribers)
+	{
+		FDelegateHandle DelegateHandle = Element.Key->AddToGameOverEvent(Invoker->GetGameOverEvent());
+		Element.Value.Add(Invoker, DelegateHandle);
+		UE_LOG(LogTemp, Warning, TEXT("Adding ABurgerPawn* Invoker Invoker to EventManager AEventManagerActor"));
+	}
+}
+
+void AEventManagerActor::RemoveGameOverEventInvoker(ABurgerPawn* Invoker)
+{
+	for (auto& Element : GameOverEventSubscribers)
+	{
+		if (Element.Value.Contains(Invoker))
+		{
+			Invoker->GetGameOverEvent().Remove(Element.Value[Invoker]);
+			Element.Value.Remove(Invoker);
+		}
+	}
+}
+
+void AEventManagerActor::AddGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
+{
+	GameOverEventSubscribers.Add(Listener);
+	for (auto& Element : GameOverEventInvokers)
+	{
+		FDelegateHandle DelegateHandle = Listener->AddToGameOverEvent(Element->GetGameOverEvent());
+		GameOverEventSubscribers[Listener].Add(Element, DelegateHandle);
+	}
+}
+
+void AEventManagerActor::RemoveGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
+{
+	for (auto* Element : GameOverEventInvokers)
+	{
+		if (GameOverEventSubscribers[Listener].Contains(Element))
+		{
+			Element->GetGameOverEvent().Remove(GameOverEventSubscribers[Listener][Element]);
+		}
+	}
+}
+
+//void AEventManagerActor::AddGameOverEventInvoker(ABurgerPawn* Invoker)
 //{
-//    PointsAddedEventInvokers.Add(Invoker);
-//    for (auto& Element : PointsAddedEventSubscribers)
+//    /*GameOverEventInvokers.Add(Invoker);
+//    for (auto& Element : GameOverEventSubscribers)
 //    {
-//        FDelegateHandle DelegateHandle = Element.Key->AddToPointsAddedEvent(Invoker->GetPointsAddedEvent());
+//        FDelegateHandle DelegateHandle = Element.Key->AddToGameOverEvent(Invoker->GetGameOverEvent());
 //        Element.Value.Add(Invoker, DelegateHandle);
-//    }
+//    }*/
 //}
-//
-//void AEventManagerActor::RemovePointsAddedEventInvoker(AFriesActor* Invoker)
+////FGameOverEvent
+//void AEventManagerActor::RemoveGameOverEventInvoker(ABurgerPawn* Invoker)
 //{
-//    for (auto& Element : PointsAddedEventSubscribers)
+//    for (auto& Element : GameOverEventSubscribers)
 //    {
 //        if (Element.Value.Contains(Invoker))
 //        {
-//            Invoker->GetPointsAddedEvent().Remove(Element.Value[Invoker]);
+//            Invoker->GetGameOverEvent().Remove(Element.Value[Invoker]);
 //            Element.Value.Remove(Invoker);
 //        }
 //    }
 //}
 //
-//void AEventManagerActor::AddPointsAddedEventListener(AFeedTheTeddyGameModeBase* Listener)
+//void AEventManagerActor::AddGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
 //{
-//    PointsAddedEventSubscribers.Add(Listener);
-//    for (auto& Element : PointsAddedEventInvokers)
+//    /*GameOverEventSubscribers.Add(Listener);
+//    for (auto& Element : GameOverEventInvokers)
 //    {
-//        FDelegateHandle DelegateHandle = Listener->AddToPointsAddedEvent(Element->GetPointsAddedEvent());
-//        PointsAddedEventSubscribers[Listener].Add(Element, DelegateHandle);
-//    }
+//        FDelegateHandle DelegateHandle = Listener->AddToGameOverEvent(Element->GetGameOverEvent());
+//        GameOverEventSubscribers[Listener].Add(Element, DelegateHandle);
+//    }*/
 //}
 //
-//void AEventManagerActor::RemovePointsAddedEventListener(AFeedTheTeddyGameModeBase* Listener)
+//void AEventManagerActor::RemoveGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
 //{
-//    for (auto* Element : PointsAddedEventInvokers)
+//    for (auto* Element : GameOverEventInvokers)
 //    {
-//        if (PointsAddedEventSubscribers[Listener].Contains(Element))
+//        if (GameOverEventSubscribers[Listener].Contains(Element))
 //        {
-//            Element->GetPointsAddedEvent().Remove(PointsAddedEventSubscribers[Listener][Element]);
+//            Element->GetGameOverEvent().Remove(GameOverEventSubscribers[Listener][Element]);
 //        }
 //    }
 //}
-
-void AEventManagerActor::AddGameOverEventInvoker(ABurgerPawn* Invoker)
-{
-    /*GameOverEventInvokers.Add(Invoker);
-    for (auto& Element : GameOverEventSubscribers)
-    {
-        FDelegateHandle DelegateHandle = Element.Key->AddToGameOverEvent(Invoker->GetGameOverEvent());
-        Element.Value.Add(Invoker, DelegateHandle);
-    }*/
-}
-
-void AEventManagerActor::RemoveGameOverEventInvoker(ABurgerPawn* Invoker)
-{
-    for (auto& Element : GameOverEventSubscribers)
-    {
-        if (Element.Value.Contains(Invoker))
-        {
-            Invoker->GetGameOverEvent().Remove(Element.Value[Invoker]);
-            Element.Value.Remove(Invoker);
-        }
-    }
-}
-
-void AEventManagerActor::AddGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
-{
-    /*GameOverEventSubscribers.Add(Listener);
-    for (auto& Element : GameOverEventInvokers)
-    {
-        FDelegateHandle DelegateHandle = Listener->AddToGameOverEvent(Element->GetGameOverEvent());
-        GameOverEventSubscribers[Listener].Add(Element, DelegateHandle);
-    }*/
-}
-
-void AEventManagerActor::RemoveGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
-{
-    for (auto* Element : GameOverEventInvokers)
-    {
-        if (GameOverEventSubscribers[Listener].Contains(Element))
-        {
-            Element->GetGameOverEvent().Remove(GameOverEventSubscribers[Listener][Element]);
-        }
-    }
-}
 

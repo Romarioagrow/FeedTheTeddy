@@ -13,18 +13,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FEEDTHETEDDY_FeedTheTeddyGameModeBase_generated_h
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_SPARSE_DATA
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_SPARSE_DATA
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execAddPoints);
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execAddPoints);
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_INCLASS_NO_PURE_DECLS \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFeedTheTeddyGameModeBase(); \
 	friend struct Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(AFeedTheTeddyGameModeBase)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_INCLASS \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_INCLASS \
 private: \
 	static void StaticRegisterNativesAFeedTheTeddyGameModeBase(); \
 	friend struct Z_Construct_UClass_AFeedTheTeddyGameModeBase_Statics; \
@@ -42,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(AFeedTheTeddyGameModeBase)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_STANDARD_CONSTRUCTORS \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFeedTheTeddyGameModeBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFeedTheTeddyGameModeBase) \
@@ -55,7 +55,7 @@ private: \
 public:
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_ENHANCED_CONSTRUCTORS \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AFeedTheTeddyGameModeBase(AFeedTheTeddyGameModeBase&&); \
@@ -66,28 +66,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFeedTheTeddyGameModeBase)
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_PRIVATE_PROPERTY_OFFSET
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_15_PROLOG
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_GENERATED_BODY_LEGACY \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_PRIVATE_PROPERTY_OFFSET
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_16_PROLOG
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_PRIVATE_PROPERTY_OFFSET \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_SPARSE_DATA \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_INCLASS \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_STANDARD_CONSTRUCTORS \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_PRIVATE_PROPERTY_OFFSET \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_SPARSE_DATA \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_RPC_WRAPPERS \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_INCLASS \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_GENERATED_BODY \
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_PRIVATE_PROPERTY_OFFSET \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_SPARSE_DATA \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_INCLASS_NO_PURE_DECLS \
-	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_ENHANCED_CONSTRUCTORS \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_PRIVATE_PROPERTY_OFFSET \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_SPARSE_DATA \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_INCLASS_NO_PURE_DECLS \
+	FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
