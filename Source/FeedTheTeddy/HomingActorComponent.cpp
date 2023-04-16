@@ -52,11 +52,11 @@ void UHomingActorComponent::StartHomingTimer()
 
 void UHomingActorComponent::MoveTowardTarget()
 {
-	/*StaticMeshComponent->SetAllPhysicsLinearVelocity(FVector::ZeroVector);
+	StaticMeshComponent->SetAllPhysicsLinearVelocity(FVector::ZeroVector);
 	FVector ForceVector = GetForceVector(GetOwner()->GetActorLocation(), Target->GetActorLocation());
 	StaticMeshComponent->AddImpulse(ForceVector);
 
-	StartHomingTimer();*/
+	StartHomingTimer();
 }
 
 FVector UHomingActorComponent::GetForceVector(FVector ActorLocation, FVector TargetLocation)
