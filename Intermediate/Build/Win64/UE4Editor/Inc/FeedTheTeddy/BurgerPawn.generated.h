@@ -10,6 +10,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UPrimitiveComponent;
 class AActor;
+struct FVector;
 struct FHitResult;
 #ifdef FEEDTHETEDDY_BurgerPawn_generated_h
 #error "BurgerPawn.generated.h already included, missing '#pragma once' in BurgerPawn.h"
@@ -20,13 +21,13 @@ struct FHitResult;
 #define FeedTheTeddy_Source_FeedTheTeddy_BurgerPawn_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execEndPlay); \
-	DECLARE_FUNCTION(execOnOverlapBegin);
+	DECLARE_FUNCTION(execOnHit);
 
 
 #define FeedTheTeddy_Source_FeedTheTeddy_BurgerPawn_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execEndPlay); \
-	DECLARE_FUNCTION(execOnOverlapBegin);
+	DECLARE_FUNCTION(execOnHit);
 
 
 #define FeedTheTeddy_Source_FeedTheTeddy_BurgerPawn_h_14_INCLASS_NO_PURE_DECLS \

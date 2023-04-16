@@ -10,6 +10,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UPrimitiveComponent;
 class AActor;
+struct FVector;
 struct FHitResult;
 #ifdef FEEDTHETEDDY_TeddyBearActor_generated_h
 #error "TeddyBearActor.generated.h already included, missing '#pragma once' in TeddyBearActor.h"
@@ -19,12 +20,12 @@ struct FHitResult;
 #define FeedTheTeddy_Source_FeedTheTeddy_TeddyBearActor_h_16_SPARSE_DATA
 #define FeedTheTeddy_Source_FeedTheTeddy_TeddyBearActor_h_16_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execOnOverlapBegin);
+	DECLARE_FUNCTION(execOnHit);
 
 
 #define FeedTheTeddy_Source_FeedTheTeddy_TeddyBearActor_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execOnOverlapBegin);
+	DECLARE_FUNCTION(execOnHit);
 
 
 #define FeedTheTeddy_Source_FeedTheTeddy_TeddyBearActor_h_16_INCLASS_NO_PURE_DECLS \

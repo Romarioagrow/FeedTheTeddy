@@ -17,6 +17,8 @@ class FEEDTHETEDDY_API ATeddyBearProjectileActor : public AActor
 private:
 	AConfigurationDataActor* ConfigurationData;
 
+	float HalfCollisionHeight, HalfCollisionWidth;
+
 
 public:	
 	// Sets default values for this actor's properties
@@ -30,6 +32,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	bool IsOffScreen();
+
 	float GetHomingDelay();
+
+	UFUNCTION()
+		void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
 
 };

@@ -20,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 	ENGINE_API UEnum* Z_Construct_UEnum_Engine_EEndPlayReason();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	FEEDTHETEDDY_API UClass* Z_Construct_UClass_AFriesActor_NoRegister();
@@ -32,17 +33,16 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 		P_THIS->EndPlay(EEndPlayReason::Type(Z_Param_EndPlayReason));
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(ABurgerPawn::execOnOverlapBegin)
+	DEFINE_FUNCTION(ABurgerPawn::execOnHit)
 	{
-		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent);
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_HitComponent);
 		P_GET_OBJECT(AActor,Z_Param_OtherActor);
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp);
-		P_GET_PROPERTY(FIntProperty,Z_Param_OtherBodyIndex);
-		P_GET_UBOOL(Z_Param_bFromSweep);
-		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult);
+		P_GET_STRUCT(FVector,Z_Param_NormalImpulse);
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->OnOverlapBegin(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
+		P_THIS->OnHit(Z_Param_HitComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Out_Hit);
 		P_NATIVE_END;
 	}
 	void ABurgerPawn::StaticRegisterNativesABurgerPawn()
@@ -50,7 +50,7 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 		UClass* Class = ABurgerPawn::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "EndPlay", &ABurgerPawn::execEndPlay },
-			{ "OnOverlapBegin", &ABurgerPawn::execOnOverlapBegin },
+			{ "OnHit", &ABurgerPawn::execOnHit },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -96,33 +96,30 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics
+	struct Z_Construct_UFunction_ABurgerPawn_OnHit_Statics
 	{
-		struct BurgerPawn_eventOnOverlapBegin_Parms
+		struct BurgerPawn_eventOnHit_Parms
 		{
-			UPrimitiveComponent* OverlappedComponent;
+			UPrimitiveComponent* HitComponent;
 			AActor* OtherActor;
 			UPrimitiveComponent* OtherComp;
-			int32 OtherBodyIndex;
-			bool bFromSweep;
-			FHitResult SweepResult;
+			FVector NormalImpulse;
+			FHitResult Hit;
 		};
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OverlappedComponent_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HitComponent_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OverlappedComponent;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HitComponent;
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OtherComp_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OtherComp;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_OtherBodyIndex;
-		static void NewProp_bFromSweep_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bFromSweep;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NormalImpulse;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SweepResult_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Hit_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_SweepResult;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Hit;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -130,52 +127,44 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OverlappedComponent_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_HitComponent_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OverlappedComponent = { "OverlappedComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnOverlapBegin_Parms, OverlappedComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OverlappedComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OverlappedComponent_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnOverlapBegin_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_HitComponent = { "HitComponent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnHit_Parms, HitComponent), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_HitComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_HitComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnHit_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherComp_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherComp_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnOverlapBegin_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherComp_MetaData)) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherBodyIndex = { "OtherBodyIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnOverlapBegin_Parms, OtherBodyIndex), METADATA_PARAMS(nullptr, 0) };
-	void Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_bFromSweep_SetBit(void* Obj)
-	{
-		((BurgerPawn_eventOnOverlapBegin_Parms*)Obj)->bFromSweep = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_bFromSweep = { "bFromSweep", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(BurgerPawn_eventOnOverlapBegin_Parms), &Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_bFromSweep_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnHit_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherComp_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_NormalImpulse = { "NormalImpulse", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnHit_Parms, NormalImpulse), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_Hit_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnOverlapBegin_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_SweepResult_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OverlappedComponent,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherActor,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherComp,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_OtherBodyIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_bFromSweep,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::NewProp_SweepResult,
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_Hit = { "Hit", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BurgerPawn_eventOnHit_Parms, Hit), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_Hit_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_Hit_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_HitComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherActor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_OtherComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_NormalImpulse,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::NewProp_Hit,
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "/**\n\x09 * @brief \n\x09 * @param OverlappedComponent \n\x09 * @param OtherActor \n\x09 * @param OtherComp \n\x09 * @param OtherBodyIndex \n\x09 * @param bFromSweep \n\x09 * @param SweepResult \n\x09*/" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "BurgerPawn.h" },
-		{ "ToolTip", "@brief\n@param OverlappedComponent\n@param OtherActor\n@param OtherComp\n@param OtherBodyIndex\n@param bFromSweep\n@param SweepResult" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABurgerPawn, nullptr, "OnOverlapBegin", nullptr, nullptr, sizeof(BurgerPawn_eventOnOverlapBegin_Parms), Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin()
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABurgerPawn, nullptr, "OnHit", nullptr, nullptr, sizeof(BurgerPawn_eventOnHit_Parms), Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C20401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABurgerPawn_OnHit()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin_Statics::FuncParams);
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABurgerPawn_OnHit_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -208,7 +197,7 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABurgerPawn_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABurgerPawn_EndPlay, "EndPlay" }, // 2170694705
-		{ &Z_Construct_UFunction_ABurgerPawn_OnOverlapBegin, "OnOverlapBegin" }, // 3141913141
+		{ &Z_Construct_UFunction_ABurgerPawn_OnHit, "OnHit" }, // 592958195
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABurgerPawn_Statics::Class_MetaDataParams[] = {
@@ -265,7 +254,7 @@ void EmptyLinkFunctionForGeneratedCodeBurgerPawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABurgerPawn, 1568685264);
+	IMPLEMENT_CLASS(ABurgerPawn, 3301200828);
 	template<> FEEDTHETEDDY_API UClass* StaticClass<ABurgerPawn>()
 	{
 		return ABurgerPawn::StaticClass();

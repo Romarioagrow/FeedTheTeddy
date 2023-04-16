@@ -27,3 +27,4 @@ C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\U
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\HomingActorInterface.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\HomingActorInterface.generated.h
 C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Intermediate\Build\Win64\UE4Editor\Inc\FeedTheTeddy\TeddyBearProjectileActor.generated.h
+C:\Users\romar\Documents\Unreal Projects\FeedTheTeddy\Source\FeedTheTeddy\ScreenConstants.h

@@ -37,7 +37,9 @@ void ABurgerPawn::BeginPlay()
 		UStaticMeshComponent* StaticMeshComponent = StaticMeshComponents[0];
 
 		// set up delegate on actor begin overlap
-		StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ABurgerPawn::OnOverlapBegin);
+		//StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ABurgerPawn::OnOverlapBegin);
+		StaticMeshComponent->OnComponentHit.AddDynamic(this, &ABurgerPawn::OnHit);
+
 	}
 
 	// add to event manager
@@ -55,7 +57,6 @@ void ABurgerPawn::BeginPlay()
 	{
 		ConfigurationData = Cast<AConfigurationDataActor>(TaggedActors[0]);
 	}
-	
 }
 
 // Called every frame
@@ -87,8 +88,9 @@ void ABurgerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-void ABurgerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void ABurgerPawn::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
+	UE_LOG(LogTemp, Warning, TEXT("OnHit"));
 	if (OtherActor != nullptr)
 	{
 		if (OtherActor->ActorHasTag("TeddyBear"))
@@ -107,6 +109,27 @@ void ABurgerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActo
 		}
 	}
 }
+
+//void ABurgerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//{
+//	if (OtherActor != nullptr)
+//	{
+//		if (OtherActor->ActorHasTag("TeddyBear"))
+//		{
+//			Health -= ConfigurationData->GetBearDamage();
+//			HealthPercent = StaticCast<float>(Health) / MaxHealth;
+//			OtherActor->Destroy();
+//			CheckGameOver();
+//		}
+//		else if (OtherActor->ActorHasTag("TeddyBearProjectile"))
+//		{
+//			Health -= ConfigurationData->GetBearProjectileDamage();
+//			HealthPercent = StaticCast<float>(Health) / MaxHealth;
+//			OtherActor->Destroy();
+//			CheckGameOver();
+//		}
+//	}
+//}
 
 void ABurgerPawn::MoveHorizontally(float moveScale)
 {

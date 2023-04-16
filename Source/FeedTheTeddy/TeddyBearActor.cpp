@@ -60,7 +60,8 @@ void ATeddyBearActor::BeginPlay()
 		StaticMeshComponent = StaticMeshComponents[0];
 
 		// set up delegate for collision on actor begin overlap
-		StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ATeddyBearActor::OnOverlapBegin);
+		//StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ATeddyBearActor::OnOverlapBegin);
+		StaticMeshComponent->OnComponentHit.AddDynamic(this, &ATeddyBearActor::OnHit);
 
 		// add random force
 		ImpulseForce = FMath::RandRange(
@@ -110,14 +111,23 @@ void ATeddyBearActor::Tick(float DeltaTime)
 	}
 }
 
-void ATeddyBearActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void ATeddyBearActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// destroy teddy bear projectiles
-	if (OtherActor != nullptr && OtherActor->ActorHasTag("TeddyBearProjectile"))
+	if (OtherActor != nullptr && OtherActor->ActorHasTag("FriesProjectile"))
 	{
-		OtherActor->Destroy();
+		OtherActor->Destroy();//TeddyBearProjectile
 	}
 }
+
+//void ATeddyBearActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//{
+//	// destroy teddy bear projectiles
+//	if (OtherActor != nullptr && OtherActor->ActorHasTag("TeddyBearProjectile"))
+//	{
+//		OtherActor->Destroy();
+//	}
+//}
 
 bool ATeddyBearActor::IsOffScreen()
 {

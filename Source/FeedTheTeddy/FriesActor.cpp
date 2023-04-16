@@ -54,7 +54,8 @@ void AFriesActor::BeginPlay()
 		// get static mesh component
 		UStaticMeshComponent* StaticMeshComponent = StaticMeshComponents[0];
 		// set up delegate on actor begin overlap
-		StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &AFriesActor::OnOverlapBegin);
+		//StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &AFriesActor::OnOverlapBegin);
+		StaticMeshComponent->OnComponentHit.AddDynamic(this, &AFriesActor::OnHit);
 
 		// get mesh moving
 		FVector Force{ 0.0f, 0.0f, ConfigurationData->GetFriesImpulseForce() };
@@ -74,7 +75,28 @@ void AFriesActor::Tick(float DeltaTime)
 	}
 }
 
-void AFriesActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//void AFriesActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//{
+//	// check for objects taht destroy fires
+//	if (OtherActor != nullptr)
+//	{
+//		// earn points and destroy teddy bear and fries
+//		if (OtherActor->ActorHasTag("TeddyBear"))
+//		{
+//			// add point and destroy teddy bear and fries
+//			PointsAddedEvent.Broadcast(ConfigurationData->GetPointsForTeddyBear());
+//			OtherActor->Destroy();
+//			Destroy();
+//		}
+//		else if (OtherActor->ActorHasTag("TeddyBearProjectile"))
+//		{
+//			OtherActor->Destroy();
+//			Destroy();
+//		}
+//	}
+//}
+
+void AFriesActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// check for objects taht destroy fires
 	if (OtherActor != nullptr)
