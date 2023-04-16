@@ -12,22 +12,6 @@ ATeddyBearActor::ATeddyBearActor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-}
-
-UStaticMeshComponent* ATeddyBearActor::GetStaticMesh()
-{
-	return StaticMeshComponent;
-}
-
-float ATeddyBearActor::GetImpulseForce()
-{
-	return ImpulseForce;
-}
-
-float ATeddyBearActor::GetHomingDelay()
-{
-	return ConfigurationData->GetBearHomingDelay();
 }
 
 // Called when the game starts or when spawned
@@ -56,11 +40,9 @@ void ATeddyBearActor::BeginPlay()
 	// make sure static mesh is found
 	if (StaticMeshComponents.Num() > 0)
 	{
-		//UStaticMeshComponent* StaticMesh = StaticMeshComponents[0];
 		StaticMeshComponent = StaticMeshComponents[0];
 
-		// set up delegate for collision on actor begin overlap
-		//StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ATeddyBearActor::OnOverlapBegin);
+		// set up delegate for collision on actor hit
 		StaticMeshComponent->OnComponentHit.AddDynamic(this, &ATeddyBearActor::OnHit);
 
 		// add random force
@@ -116,18 +98,9 @@ void ATeddyBearActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActo
 	// destroy teddy bear projectiles
 	if (OtherActor != nullptr && OtherActor->ActorHasTag("FriesProjectile"))
 	{
-		OtherActor->Destroy();//TeddyBearProjectile
+		OtherActor->Destroy();
 	}
 }
-
-//void ATeddyBearActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-//{
-//	// destroy teddy bear projectiles
-//	if (OtherActor != nullptr && OtherActor->ActorHasTag("TeddyBearProjectile"))
-//	{
-//		OtherActor->Destroy();
-//	}
-//}
 
 bool ATeddyBearActor::IsOffScreen()
 {
@@ -157,4 +130,19 @@ void ATeddyBearActor::StartShootTimer()
 		ConfigurationData->GetMaxBearShootTimerDuration());
 	FTimerHandle ShootTimerHandle;
 	GetWorldTimerManager().SetTimer(ShootTimerHandle, this, &ATeddyBearActor::ShootProjectile, TimerDuration);
+}
+
+UStaticMeshComponent* ATeddyBearActor::GetStaticMesh()
+{
+	return StaticMeshComponent;
+}
+
+float ATeddyBearActor::GetImpulseForce()
+{
+	return ImpulseForce;
+}
+
+float ATeddyBearActor::GetHomingDelay()
+{
+	return ConfigurationData->GetBearHomingDelay();
 }

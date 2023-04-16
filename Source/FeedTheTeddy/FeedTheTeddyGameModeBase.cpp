@@ -43,12 +43,10 @@ void AFeedTheTeddyGameModeBase::BeginPlay()
 	}
 
 	// Проверьте, существует ли SaveSlot
-	const FString SaveSlotName = TEXT("FeedTheTeddySaveSlot");
+	const FString SaveSlotName = TEXT("FeedTheTeddySaveGame");
 	const int32 UserIndex = 0;
-
 	// Создаем экземпляр класса UFeedTheTeddySaveGame
 	UFeedTheTeddySaveGame* SaveGameInstance = Cast<UFeedTheTeddySaveGame>(UGameplayStatics::CreateSaveGameObject(UFeedTheTeddySaveGame::StaticClass()));
-
 	// Загружаем сохраненные данные
 	if (UGameplayStatics::DoesSaveGameExist(SaveSlotName, UserIndex))
 	{
@@ -64,10 +62,7 @@ void AFeedTheTeddyGameModeBase::BeginPlay()
 		// Установка значений по умолчанию, если сохраненной игры не существует
 		SaveGameInstance->HighScore = 0;
 	}
-
 	// Сохраняем данные
-	// Вам нужно изменить HighScore на новое значение, которое вы хотите сохранить
-	//SaveGameInstance->HighScore = NewHighScore;
 	UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveSlotName, UserIndex);
 }
 
@@ -81,8 +76,6 @@ FDelegateHandle AFeedTheTeddyGameModeBase::AddToPointsAddedEvent(FPointsAddedEve
 	FDelegateHandle DelegateHandle = PointsAddedEventToSubscribe.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
 	UE_LOG(LogTemp, Warning, TEXT("Subscribed to PointsAddedEvent with Handle "));
 	return DelegateHandle;
-
-	//return PointsAddedEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
 }
 
 /**
@@ -124,6 +117,7 @@ void AFeedTheTeddyGameModeBase::EndGame()
 	if (SaveGameInstance != nullptr)
 	{
 		HighScore = SaveGameInstance->HighScore;
+		UE_LOG(LogTemp, Warning, TEXT("High score loaded: %d"), HighScore);
 	}
 
 	// if current score is higher than high score, save new high score
@@ -139,6 +133,7 @@ void AFeedTheTeddyGameModeBase::EndGame()
 		SaveGameInstance->HighScore = Score;
 		UGameplayStatics::SaveGameToSlot(
 			SaveGameInstance, "FeedTheTeddySaveGame", 0);
+		UE_LOG(LogTemp, Warning, TEXT("New high score saved: %d"), Score);
 	}
 
 	// display game over widget and pause game

@@ -20,7 +20,7 @@ private:
 
 	float FriesImpulseForce{ 100.0f };
 
-	int PointsForTeddyBear{ 10 };
+	int PointsForTeddyBear{ 100 };
 
 	float MinBearImpulseForce{ 50.0f };
 

@@ -67,7 +67,6 @@ void AEventManagerActor::RemovePointsAddedEventListener(AFeedTheTeddyGameModeBas
 	}
 }
 
-
 /**
  * @brief 
  * @param Invoker 
@@ -115,47 +114,3 @@ void AEventManagerActor::RemoveGameOverEventListener(AFeedTheTeddyGameModeBase* 
 		}
 	}
 }
-
-//void AEventManagerActor::AddGameOverEventInvoker(ABurgerPawn* Invoker)
-//{
-//    /*GameOverEventInvokers.Add(Invoker);
-//    for (auto& Element : GameOverEventSubscribers)
-//    {
-//        FDelegateHandle DelegateHandle = Element.Key->AddToGameOverEvent(Invoker->GetGameOverEvent());
-//        Element.Value.Add(Invoker, DelegateHandle);
-//    }*/
-//}
-////FGameOverEvent
-//void AEventManagerActor::RemoveGameOverEventInvoker(ABurgerPawn* Invoker)
-//{
-//    for (auto& Element : GameOverEventSubscribers)
-//    {
-//        if (Element.Value.Contains(Invoker))
-//        {
-//            Invoker->GetGameOverEvent().Remove(Element.Value[Invoker]);
-//            Element.Value.Remove(Invoker);
-//        }
-//    }
-//}
-//
-//void AEventManagerActor::AddGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
-//{
-//    /*GameOverEventSubscribers.Add(Listener);
-//    for (auto& Element : GameOverEventInvokers)
-//    {
-//        FDelegateHandle DelegateHandle = Listener->AddToGameOverEvent(Element->GetGameOverEvent());
-//        GameOverEventSubscribers[Listener].Add(Element, DelegateHandle);
-//    }*/
-//}
-//
-//void AEventManagerActor::RemoveGameOverEventListener(AFeedTheTeddyGameModeBase* Listener)
-//{
-//    for (auto* Element : GameOverEventInvokers)
-//    {
-//        if (GameOverEventSubscribers[Listener].Contains(Element))
-//        {
-//            Element->GetGameOverEvent().Remove(GameOverEventSubscribers[Listener][Element]);
-//        }
-//    }
-//}
-

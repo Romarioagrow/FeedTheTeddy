@@ -83,11 +83,6 @@ void AFriesActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 		// earn points and destroy teddy bear and fries
 		if (OtherActor->ActorHasTag("TeddyBear"))
 		{
-			// add point and destroy teddy bear and fries
-			/*UE_LOG(LogTemp, Warning, TEXT("Fries hit teddy bear"));
-			PointsAddedEvent.Broadcast(ConfigurationData->GetPointsForTeddyBear());
-			UE_LOG(LogTemp, Warning, TEXT("after Broadcast"));*/
-
 			UE_LOG(LogTemp, Warning, TEXT("Broadcasting PointsAddedEvent"));
 			PointsAddedEvent.Broadcast(ConfigurationData->GetPointsForTeddyBear());
 

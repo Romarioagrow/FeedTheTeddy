@@ -17,5 +17,4 @@ class FEEDTHETEDDY_API UFeedTheTeddySaveGame : public USaveGame
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Saved Game Data")
 	int HighScore{ 0 };
-	
 };

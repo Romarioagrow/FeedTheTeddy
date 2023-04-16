@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "BurgerPawn.h"
 
 #include "ScreenConstants.h"
@@ -36,8 +35,7 @@ void ABurgerPawn::BeginPlay()
 		// get static mesh component
 		UStaticMeshComponent* StaticMeshComponent = StaticMeshComponents[0];
 
-		// set up delegate on actor begin overlap
-		//StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &ABurgerPawn::OnOverlapBegin);
+		// set up delegate on actor hit
 		StaticMeshComponent->OnComponentHit.AddDynamic(this, &ABurgerPawn::OnHit);
 
 	}
