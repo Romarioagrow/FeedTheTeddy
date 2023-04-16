@@ -19,6 +19,7 @@ void AFeedTheTeddyGameModeBase::BeginPlay()
 		AEventManagerActor* EventManager = Cast<AEventManagerActor>(TaggedActors[0]);
 		EventManager->AddPointsAddedEventListener(this);
 		EventManager->AddGameOverEventListener(this);
+		UE_LOG(LogTemp, Warning, TEXT("Event listeners added in GameMode"));
 	}
 
 	// add hud
@@ -53,12 +54,17 @@ void AFeedTheTeddyGameModeBase::BeginPlay()
 	}
 }
 
-FDelegateHandle AFeedTheTeddyGameModeBase::AddToPointsAddedEvent()
+FDelegateHandle AFeedTheTeddyGameModeBase::AddToPointsAddedEvent(FPointsAddedEvent& PointsAddedEventToSubscribe)
 {
-	return PointsAddedEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
+	
+	FDelegateHandle DelegateHandle = PointsAddedEventToSubscribe.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
+	UE_LOG(LogTemp, Warning, TEXT("Subscribed to PointsAddedEvent with Handle "));
+	return DelegateHandle;
+
+	//return PointsAddedEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::AddPoints);
 }
 
-FDelegateHandle AFeedTheTeddyGameModeBase::AddToGameOverEvent()
+FDelegateHandle AFeedTheTeddyGameModeBase::AddToGameOverEvent(FPointsAddedEvent& PointsAddedEventToSubscribe)
 {
 	return GameOverEvent.AddUObject(this, &AFeedTheTeddyGameModeBase::EndGame);
 }
@@ -147,4 +153,5 @@ void AFeedTheTeddyGameModeBase::ChangeSecondsTimer()
 void AFeedTheTeddyGameModeBase::AddPoints(int Points)
 {
 	Score += Points;
+	UE_LOG(LogTemp, Warning, TEXT("Score: %d"), Score);
 }

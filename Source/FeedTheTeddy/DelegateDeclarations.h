@@ -19,5 +19,5 @@ UCLASS()
 class FEEDTHETEDDY_API UDelegateDeclarations : public UObject
 {
 	GENERATED_BODY()
-	
+
 };

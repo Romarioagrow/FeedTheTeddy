@@ -110,27 +110,6 @@ void ABurgerPawn::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 	}
 }
 
-//void ABurgerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-//{
-//	if (OtherActor != nullptr)
-//	{
-//		if (OtherActor->ActorHasTag("TeddyBear"))
-//		{
-//			Health -= ConfigurationData->GetBearDamage();
-//			HealthPercent = StaticCast<float>(Health) / MaxHealth;
-//			OtherActor->Destroy();
-//			CheckGameOver();
-//		}
-//		else if (OtherActor->ActorHasTag("TeddyBearProjectile"))
-//		{
-//			Health -= ConfigurationData->GetBearProjectileDamage();
-//			HealthPercent = StaticCast<float>(Health) / MaxHealth;
-//			OtherActor->Destroy();
-//			CheckGameOver();
-//		}
-//	}
-//}
-
 void ABurgerPawn::MoveHorizontally(float moveScale)
 {
 	moveScale = FMath::Clamp(moveScale, -1.0f, 1.0f);

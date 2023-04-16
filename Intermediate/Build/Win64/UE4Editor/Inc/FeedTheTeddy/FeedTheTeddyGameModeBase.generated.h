@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FEEDTHETEDDY_FeedTheTeddyGameModeBase_generated_h
 
 #define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_SPARSE_DATA
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS
-#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execAddPoints);
+
+
+#define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execAddPoints);
+
+
 #define FeedTheTeddy_Source_FeedTheTeddy_FeedTheTeddyGameModeBase_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFeedTheTeddyGameModeBase(); \

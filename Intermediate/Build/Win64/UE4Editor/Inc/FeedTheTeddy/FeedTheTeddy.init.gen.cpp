@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeFeedTheTeddy_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xF3E7F180,
+				0x68CDA28F,
 				0xB33971F4,
 				METADATA_PARAMS(nullptr, 0)
 			};

@@ -4,7 +4,7 @@
 
 #include "DelegateDeclarations.h"
 #include "ConfigurationDataActor.h"
-          
+
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "FriesActor.generated.h"

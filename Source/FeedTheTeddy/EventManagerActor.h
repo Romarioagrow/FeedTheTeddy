@@ -17,8 +17,8 @@ class FEEDTHETEDDY_API AEventManagerActor : public AActor
 	
 private:
 	// points added event support
-	TArray<AFriesActor*> PointsAddedEventInvokers;
-	TMap<AFeedTheTeddyGameModeBase*, TMap<AFriesActor*, FDelegateHandle>> PointsAddedEventSubscribers;
+	TArray<AFriesActor*> PointsAddedInvokers;
+	TMap<AFeedTheTeddyGameModeBase*, TMap<AFriesActor*, FDelegateHandle>> PointsAddedListeners;
 
 	// game over event support
 	TArray<ABurgerPawn*> GameOverEventInvokers;
@@ -47,18 +47,6 @@ public:
 	 * @param Invoker 
 	*/
 	void RemovePointsAddedEventInvoker(AFriesActor* Invoker);
-
-	/**
-	 * @brief 
-	 * @param Invoker 
-	*/
-	void AddPointsAddedEventInvoker(AFeedTheTeddyGameModeBase* Invoker);
-
-	/**
-	 * @brief 
-	 * @param Invoker 
-	*/
-	void RemoveOintsAddedEventInvoker(AFriesActor* Invoker);
 
 	/**
 	 * @brief 

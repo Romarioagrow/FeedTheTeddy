@@ -34,7 +34,8 @@ void AFriesActor::BeginPlay()
 	if (TaggedActors.Num() > 0)
 	{
 		AEventManagerActor* EventManager = Cast<AEventManagerActor>(TaggedActors[0]);
-		EventManager->AddPointsAddedEventInvoker(this);
+  		EventManager->AddPointsAddedEventInvoker(this);
+		UE_LOG(LogTemp, Warning, TEXT("Event invoker added in FriesActor"));
 	}
 
 	// save for efficiency 
@@ -54,7 +55,6 @@ void AFriesActor::BeginPlay()
 		// get static mesh component
 		UStaticMeshComponent* StaticMeshComponent = StaticMeshComponents[0];
 		// set up delegate on actor begin overlap
-		//StaticMeshComponent->OnComponentBeginOverlap.AddDynamic(this, &AFriesActor::OnOverlapBegin);
 		StaticMeshComponent->OnComponentHit.AddDynamic(this, &AFriesActor::OnHit);
 
 		// get mesh moving
@@ -75,27 +75,6 @@ void AFriesActor::Tick(float DeltaTime)
 	}
 }
 
-//void AFriesActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-//{
-//	// check for objects taht destroy fires
-//	if (OtherActor != nullptr)
-//	{
-//		// earn points and destroy teddy bear and fries
-//		if (OtherActor->ActorHasTag("TeddyBear"))
-//		{
-//			// add point and destroy teddy bear and fries
-//			PointsAddedEvent.Broadcast(ConfigurationData->GetPointsForTeddyBear());
-//			OtherActor->Destroy();
-//			Destroy();
-//		}
-//		else if (OtherActor->ActorHasTag("TeddyBearProjectile"))
-//		{
-//			OtherActor->Destroy();
-//			Destroy();
-//		}
-//	}
-//}
-
 void AFriesActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// check for objects taht destroy fires
@@ -105,7 +84,13 @@ void AFriesActor::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 		if (OtherActor->ActorHasTag("TeddyBear"))
 		{
 			// add point and destroy teddy bear and fries
+			/*UE_LOG(LogTemp, Warning, TEXT("Fries hit teddy bear"));
 			PointsAddedEvent.Broadcast(ConfigurationData->GetPointsForTeddyBear());
+			UE_LOG(LogTemp, Warning, TEXT("after Broadcast"));*/
+
+			UE_LOG(LogTemp, Warning, TEXT("Broadcasting PointsAddedEvent"));
+			PointsAddedEvent.Broadcast(ConfigurationData->GetPointsForTeddyBear());
+
 			OtherActor->Destroy();
 			Destroy();
 		}

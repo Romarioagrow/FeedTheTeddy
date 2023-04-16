@@ -23,20 +23,14 @@ private:
 
 	FGameOverEvent GameOverEvent;
 
-
 	void StartOneSecondTimer();
 
 	void ChangeSecondsTimer();
 
-	void AddPoints(int Points);
-
-
-	
-
 public:
 	AFeedTheTeddyGameModeBase();
 
-	UPROPERTY(BlueprintReadOnly, Category = "Score")
+	UPROPERTY(BlueprintReadWrite, Category = "Score")
 	int Score{ 0 };
 
 	void EndGame();
@@ -51,13 +45,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HUD")
 		TSubclassOf<UUserWidget> HudWidgetClass;
 
-	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HUD")
-		TSubclassOf<UHUD> GameOverWidgetClass;*/
+	UFUNCTION()
+		void AddPoints(int Points);
+
+	FDelegateHandle AddToPointsAddedEvent(FPointsAddedEvent& PointsAddedEventToSubscribe);
+
+	FDelegateHandle AddToGameOverEvent(FPointsAddedEvent& PointsAddedEventToSubscribe);
 
 protected:
 	virtual void BeginPlay() override;
 
-	FDelegateHandle AddToPointsAddedEvent();
-
-	FDelegateHandle AddToGameOverEvent();
+	
 };
